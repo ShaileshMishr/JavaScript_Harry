@@ -1,0 +1,46 @@
+<html>
+    <head>
+
+        <script type="text/javascript">
+            function validate() {
+              let x = document.getElementById("fname").value;
+              let y = document.getElementsByName("lname")[0].value;
+             // let cname= document.getElementsByClassName("className").value;
+             let para = document.getElementsByTagName("p");
+             para[0].style.fontSize=25;
+             para[1].style.fontSize=40;
+              
+              if (x == "") {
+                alert("First Name must be filled out");
+                alert(cname)
+                return false;
+              }
+              else if (y == "") {
+                alert("Last Name must be filled out");
+                return false;
+              }
+              else if (document.getElementsByClassName("className")) {
+                alert("Age is required");
+                return false;
+              }
+            }
+            </script>
+
+    </head>
+    <body>
+        First Name :
+        <input type="text" id="fname" value="" /> <br><br>
+        Last Name :
+        <input type="text" id="lname" name="lname" value="" /> <br><br>
+
+        <div class="className">
+          Age :
+          <input type="text" id="age" value=""/>
+          </div> <br><br>
+          <P> Hello Everyone</P><br>
+          <P> Have a Good Day</P><br>
+
+
+        <input type="submit" value="submit" onclick="validate();">
+    </body>
+</html>

@@ -1,0 +1,157 @@
+<Html>  
+    <head>   
+    <title>  
+    Registration Page  
+    </title>  
+
+    <script type="text/javascript">
+
+        function validate()
+        {
+            var Fname = document.forms["myForm"]["firstname"].value;
+            var Lname = document.myForm.lastname.value;
+            var Course = document.myForm.course.value;
+            var gen = document.myForm.Gender.value;
+            var Phone = document.myForm.phone.value;
+            var add = document.myForm.address.value;
+            var Email = document.myForm.email.value;
+            var Pass = document.myForm.pass.value;
+            var Repass = document.myForm.repass.value;
+            var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if (Fname== "") 
+    {
+         alert("*** FirstName is Required");
+         return false;
+    }
+    else  if (Lname== "") 
+    {
+         alert("*** LastName is Required");
+         return false;
+    }
+    else if (Course=="") {
+        alert("**** Please Select your course")
+    return false;
+}
+    else if(gen=="") {
+        alert("**** Please Select your gender")
+    return false;
+}
+else if(Phone=="") {
+        alert("**** Please Enter your Phone no")
+    return false;
+}
+    else if(Phone.length<10) {
+        alert("**** Please Enter 10 digit phone no")
+    return false;
+}
+else if(add=="") {
+        alert("**** Address is mandatory ")
+    return false;
+}
+else if(Email=="") {
+        alert("**** Email is mandatory ")
+    return false;
+}
+else if(!Email.match(reg)) {
+        alert("**** Wrong Email Format ")
+    return false;
+}
+
+// else if((Email.indexOf('@')<=0) || ((Email.charAt(Email.length-4)!=".") && (Email.charAt(Email.length-3)!=".") )){
+//     alert("Wrong Email Format")
+//     return false;
+  
+// }
+
+else if(Pass=="") {
+        alert("**** Password id required ")
+    return false;
+}
+
+else if(Repass=="") {
+        alert("**** Again Enter your password ")
+    return false;
+}
+else if(Pass !== Repass) {
+        alert("**** Password does not match ")
+    return false;
+}
+
+alert("Submitted Successfully")
+        }
+       
+</script>
+
+    </head>
+    
+    
+    <body bgcolor="Lightskyblue">  
+    <br>  
+    <br>  
+    <div style="text-align: center;">
+        <center>  <h1> Student Registeration Form</h1> </center>  
+        <hr>  
+    <form name="myForm" onsubmit="return validate()">  
+      
+    <label> Firstname </label>         
+    <input type="text" name="firstname" size="15"/> <br> <br>   
+    <label> Lastname: </label>         
+    <input type="text" name="lastname" size="15"/> <br> <br>  
+      
+    <label>   
+    Course :  
+    </label>   
+     <select name="course" id="course">
+    <option value="">Course</option>  
+    <option value="BCA">BCA</option>  
+    <option value="BBA">BBA</option>  
+    <option value="B.Tech">B.Tech</option>  
+    <option value="MBA">MBA</option>  
+    <option value="MCA">MCA</option>  
+    <option value="M.Tech">M.Tech</option>  
+    </select>  
+      
+    <br>  
+    <br>  
+    <label>   
+    Gender :  
+    </label><br>  
+
+<input type="radio" id="male" name="Gender" value="Male">
+<label for="male">Male</label><br>
+<input type="radio" id="female" name="Gender" value="Female">
+<label for="female">Female</label><br>
+<input type="radio" id="other" name="Gender" value="Other">
+<label for="other">Other</label>
+
+    <br>  
+    <br>  
+      
+    <label>   
+    Phone :  
+    </label>  
+    <input type="text" name="country code"  value="+91" size="2" readonly/>   
+    <input type="text" name="phone" size="10" maxlength="10" /> <br> <br>  
+    Address  
+    <br>  
+    <textarea cols="80" rows="5" value="address" name="address" required>  
+    </textarea>  
+    <br> <br>  
+
+    Email:  
+    <input type="text" id="email" name="email" value=""/> <br>    
+    <br> <br>  
+    Password:  
+    <input type="Password" id="pass" name="pass" value=""/> <br>   
+    <br> <br>  
+    Re-type password:  
+    <input type="Password" id="repass" name="repass" value=""/> <br> <br>  
+    <input type="submit" value="Submit"/>  
+    </form>  
+</div>
+    </body>  
+    </html>  
+
+
+   
