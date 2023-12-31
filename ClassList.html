@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassList</title>
+</head>
+<body>
+    <div id="first" class="yellow text-dark">
+        <span>Hey I'm good</span>
+    </div>
+</body>
+</html>
+
+<script>
+first.className = "text-black red"
+// classList remove
+//first.classList.remove("red")
+
+//add
+first.classList.add("red")
+
+// toogle - Negation 
+// first.classList.toogle("red")
+
+// first.classList.contains("red")
+</script>
+
+<style>
+    .yellow{
+        background-color: yellow;
+        color: white;
+    }
+    .red{
+        background-color: red;
+        color: white;
+    }
+
+    .text-dark{
+        color: black;
+    }
+</style>

@@ -1,0 +1,57 @@
+ <!-- Q1- Create a navbar and change the color of its First element to red. -->
+
+
+<html>
+    <head>
+        <title>First Page</title>
+        
+
+    </head>
+    <body>
+        <nav>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Hello</li>
+
+        </nav>
+        <table>
+            <tbody>
+                <td>Hello 1</td>
+                <td>Hello 2</td>
+                <td>Hello 3</td>
+                <td>Hello 4</td>
+                <td>Hello 5</td>
+            </tbody>
+           
+
+        </table>
+    </body>
+
+</html>
+
+<script>
+    document.getElementsByTagName("nav")[0].firstElementChild.style.color = "red"
+    document.getElementsByTagName("nav")[0].lastElementChild.style.color = "yellow"
+
+    Array.from(document.getElementsByTagName("li")).forEach(element => {
+        element.style.background="cyan";
+    });
+
+            </script>
+
+
+<style>
+    nav{
+     display: flex;
+     background: blueviolet;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    nav li{
+        list-style: none;
+        padding: 0 23px;
+    }
+ </style>

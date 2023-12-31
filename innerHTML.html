@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner HTML</title>
+</head>
+<body>
+    Hello World
+    <span id="first">Hey I am span</span>
+</body>
+</html>
+
+<script>
+console.log(document.getElementsByTagName("span")[0])
+console.dir(document.getElementsByTagName("span")[0])
+
+console.log(document.body.firstChild.nodeName);
+console.log(document.body.firstElementChild.nodeName);
+
+console.log(first.innerHTML)
+first.innerHTML="<i> Hey I am Italic </i>"
+console.log(first.outerHTML)
+
+// text content
+console.log(document.body.textContent)
+</script>
