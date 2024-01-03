@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local_Storage</title>
+</head>
+<body>
+    Local_Storage
+</body>
+</html>
+
+<script>
+// Local storage is a web storage object which are not sent to 
+// server with each request.
+// localStorage.setItem("name","Kishan")
+// keys and value must be string by default it will save as a string
+
+
+let key = prompt("Enter key")
+let value = prompt("Enter value")
+
+localStorage.setItem(key,value)
+console.log(`The value is ${key} is ${localStorage.getItem(key)}`)
+
+// remove Item
+// if(key == "red" || key=="blue"){
+//     localStorage.removeItem(key)
+// }
+
+// clear()
+if(key==0){
+    localStorage.clear()
+}
+
+</script>

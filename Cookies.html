@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+<body>
+    Cookies
+</body>
+</html>
+
+
+<script>
+
+// Cookies- cookies are small strings of data stored directly in the browser.
+// In JS document cookie provides access to cookies
+// alert(document.cookie)
+// document.cookie = "name=harry00"
+// cookie did not over write it will only add the cookies in document
+
+// encodeURIComponent()
+
+console.log(document.cookie)
+document.cookie = "name=Kishan9900"
+document.cookie = "name2=Kishan9907"
+let key = prompt("enter your key")
+let value = prompt("enter your value")
+document.cookie=`${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+console.log(document.cookie)
+
+
+
+
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async_Await</title>
+</head>
+<body>
+    Hey This is Async Await Chapter
+</body>
+</html>
+
+<script>
+
+async function harry() {
+
+let delhiWeather = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve("12 Deg")
+    }, 2000)
+})
+
+let bangloreWeather = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve("27 Deg")
+    }, 5000)
+})
+
+    // delhiWeather.then(alert)
+    // bangloreWeather.then(alert)
+
+    console.log("Fetching Delhi Weather Please wait....")
+    let delhiW = await delhiWeather
+    console.log("Fetched Delhi Weather : " + delhiW)
+
+    
+    console.log("Fetching Banglore Weather Please wait....")
+    let bngW = await bangloreWeather
+    console.log("Fetched Banglore Weather : " + bngW)
+
+    return [delhiW, bngW]
+}
+
+const cherry = async () =>{
+    console.log("Hey I am cherry and I am waiting....")
+}
+
+const main1 = async () =>{
+    console.log("Welcome to control room")
+    let a = await harry()
+    let b = await cherry()
+
+//let a = harry()
+// a.then((value)=>{
+//     console.log(value)
+//})
+//console.log(a)
+
+}
+main1()
+
+</script>

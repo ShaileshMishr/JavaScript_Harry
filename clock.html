@@ -3,19 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    
     <title>Clock</title>
+
 </head>
 <body>
-    Clock Time
+    <div class="text-center fs-1 text">
+        <div class="badge bg-primary text-wrap text-center" id="time">
+        </div>
+    </div>
+  
+
+    
 </body>
 </html>
 
 <script>
-let a = new Date()
-let h = a.getHours()
-let m= a.getMinutes()
-let s = a.getSeconds()
-let d = a.getDate()
+// let a = new Date()
+// let h = a.getHours()
+// let m= a.getMinutes()
+// let s = a.getSeconds()
+// let d = a.getDate()
 
-console.log(h, m, s, d)
+// console.log(h, m, s, d)
+
+function getDateTime() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        if (month.toString().length == 1) {
+                month = '0' + month;
+        }
+        if (day.toString().length == 1) {
+                day = '0' + day;
+        }
+        if (hour.toString().length == 1) {
+                hour = '0' + hour;
+        }
+        if (minute.toString().length == 1) {
+                minute = '0' + minute;
+        }
+        if (second.toString().length == 1) {
+                second = '0' + second;
+        }
+        var dateTime = year + '/' + month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
+        return dateTime;
+}
+
+// example usage: realtime clock
+setInterval(function() {
+        currentTime = getDateTime();
+        document.getElementById("time").innerHTML = currentTime;
+}, 1000);
 </script>
+
+
+<style>
+    html, body {
+  height: 100%;
+  width: 100%;
+        background: #5a99dd !important;
+}
+
+</style>

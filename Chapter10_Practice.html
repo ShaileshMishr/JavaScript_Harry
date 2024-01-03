@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+ 
+    <title>Programming Contents APP JavaScript</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Contests</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              
+             
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Programming Contests</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
+          </div>
+
+          <div id="cardContainer" class="row" style="justify-content: center;">
+            
+          </div>
+
+
+      </div>
+</body>
+</html>
+
+<script>
+
+// Q1- Use a free API from the internet & feed your app with live data
+
+// let url = "https://kontests.net/api/v1/all"
+let url = "https://jsonplaceholder.typicode.com/posts/"
+let response = fetch(url)
+response.then((v)=>{
+    return v.json()
+}).then((contests)=>{
+    console.log(contests)
+    ihtml = ""
+    for(item in contests){
+        console.log(contests[item])
+        ihtml += `
+        <div class="card mx-2 my-2" style="width: 22rem;">
+                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS7Tg75W154BPepxDXz1NM87oXAnUH0u8RD_U_3uGMSg&s" alt="Card image cap">
+                <div class="card-body" >
+                  <h5 class="card-title">${contests[item].title}</h5>
+                  <p>Id: ${contests[item].id}</p>
+                  <p>Body: ${contests[item].body}</p>
+                  <a href="https://www.founderjar.com/programming-quotes/" class="btn btn-primary">Visit here</a>
+                </div>
+              </div>
+        `
+    }
+    cardContainer.innerHTML = ihtml
+})
+
+/* ********************* NOTES APP (REMAINING QUESTIONS OF PRACTICE SET)  *********** */
+
+// Q2- Create a note saving app which stores your note to LocalStorage
+
+
+// let n = localStorage.getItem("note")
+// alert("Your note is " + n)
+
+// let a = prompt("Enter a Note")
+// if(a){
+//     localStorage.setItem("note", a)
+// }
+
+// //Q4- Delete the note in the previous question
+
+// let c = confirm("Do you want to delete your note")
+// if(c){
+//     localStorage.removeItem("note")
+//     alert("Note deleted successfully")
+// }
+
+</script>
