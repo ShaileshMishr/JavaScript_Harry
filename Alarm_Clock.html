@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alarm</title>
+</head>
+<body>
+  <div id="time"></div>
+  <div id="alarm"></div>
+</body>
+</html>
+
+<script>
+
+// The HTML AudioElement Interface can be used to play audio in the browser.
+// Create an alarm clock which display time and plays sound at a user specified time
+
+function play() {
+    //var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+    var audio = new Audio('C:/Users/shaileshm/Downloads/alarm.wav');
+
+    audio.play();
+  }
+  
+  
+  setInterval(() => {
+  let d = new Date()
+  time.innerHTML = d.toDateString() + " " + d.toTimeString()
+
+}, 1000)
+
+const setAlarm = (seconds) => {
+  let d = new Date().getTime()
+  setTimeout(() => {
+    play()
+  }, seconds * 1000)
+
+  setInterval(() => {
+    secondsLeft = - (new Date().getTime() - (d + seconds * 1000))
+    if (secondsLeft > 0) {
+
+      alarm.innerHTML = "Alarm ringing in " + Math.floor(secondsLeft / 1000) + " seconds"
+    }
+
+  })
+}
+
+
+let s = prompt("After how many seconds do you want an alarm?")
+setAlarm(parseInt(s))
+
+
+</script>
